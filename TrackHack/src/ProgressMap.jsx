@@ -1,15 +1,18 @@
 import React from 'react';
 import './ProgressMap.css';
 
-function ProgressMap({ day }) {
-  const totalDays = 30;
-  const days = Array.from({ length: totalDays }, (_, i) => i + 1);
+function ProgressMap({ currentDate }) {
+  const currentDay = currentDate.getDate();
+  const totalDays = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate(); // Days in current month
 
   return (
     <div className="progress-map">
-      {days.map(d => (
-        <div key={d} className={`day-marker ${d === day ? 'active' : ''}`} title={`Day ${d}: Stay strong!`}>
-          {d === day ? '🐱' : d}
+      {[...Array(totalDays)].map((_, index) => (
+        <div key={index} className={`day ${index < currentDay ? 'completed' : ''}`}>
+          <span className="day-number">{index + 1}</span>
+          {index + 1 === currentDay && (
+            <span className="current-day-indicator">🐱</span> // Your cat avatar or indicator
+          )}
         </div>
       ))}
     </div>

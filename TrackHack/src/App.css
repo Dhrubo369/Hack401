@@ -1,113 +1,54 @@
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #e9ecef;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .App {
-  max-width: 800px; /* Adjust based on your design needs */
-  margin: 20px auto;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  width: 100%;
+  max-width: 800px; /* Adjust width as needed */
+  margin: 20px auto; /* Center the app with top margin for spacing */
   padding: 20px;
-  background-image: url('path/to/your/game-map-background.jpg'); /* Update with your path */
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 600px; /* Adjust based on your design needs */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* For absolute positioning of elements inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  color: #333;
-  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 30px;
 }
 
-/* Check-In Component */
-.check-in-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.check-in-btn {
-  background-color: #4CAF50; /* Green */
+button {
   border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.checked-in-msg {
-  color: green;
-  font-size: 20px;
+button:hover {
+  opacity: 0.9;
 }
 
-/* Progress Map Component */
-.progress-map {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Adjust based on your layout preference */
-  gap: 10px;
-  padding: 20px;
-  background-color: #e4e4e4;
-  border-radius: 10px;
-}
-
-.day-marker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.day-marker.active {
-  background-color: #4CAF50; /* Or any color of your choice */
-  color: #fff;
-  font-size: 20px;
-}
 .reset-button {
-  background-color: #f44336; /* Red */
+  background-color: #f44336; /* Red color */
   color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 20px 0;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.reset-button:hover {
-  background-color: #d32f2f;
+.full-reset-button {
+  background-color: #ff4d4d; /* Lighter red color */
+  color: white;
 }
 
-/* Motivational Quote Component */
-blockquote {
-  font-style: italic;
-  color: #555555;
-  border-left: 10px solid #CCCCCC;
-  margin: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
+.benefits-container {
+  order: -1; /* Move this container to the top */
+  width: 90%; /* Match the width to the progress map width for consistency */
+  margin-bottom: 20px;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .App {
-    height: 300px; /* Adjust based on your design needs */
-  }
-  
-  .progress-map .day-marker {
-    width: 30px; /* Smaller nodes for smaller screens */
-    height: 30px;
-  }
+.benefits-container p {
+  margin: 10px 0;
 }

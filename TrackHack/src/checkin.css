@@ -1,29 +1,18 @@
 .check-in-container {
-  text-align: center;
   margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .check-in-btn {
   background-color: #4CAF50;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.check-in-btn:disabled {
-  background-color: #ccc;
-  cursor: default;
-}
-
-.journey-completed-msg {
-  color: #008000;
-  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .streak-msg {
-  margin-top: 10px;
   font-size: 16px;
+  margin: 5px 0;
 }

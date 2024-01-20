@@ -1,38 +1,32 @@
+/* ProgressMap.css */
+
 .progress-map {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Adjust based on your layout preference */
-    gap: 10px;
-    padding: 20px;
-    background-color: #e4e4e4;
-    border-radius: 10px;
-  }
-  
-  .day-marker {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    position: relative;
-  }
-  
-  .day-marker.active {
-    background-color: #4CAF50; /* Or any color of your choice */
-    color: #fff;
-    font-size: 20px;
-  }
-  .day-marker:hover::after {
-    content: attr(title);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #555;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%; /* This will take the full width of the .App container */
+}
+
+.day {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 14px;
+}
+
+.day.completed {
+  background-color: #cfc;
+}
+
+.day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
