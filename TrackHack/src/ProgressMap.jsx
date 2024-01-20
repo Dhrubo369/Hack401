@@ -8,7 +8,7 @@ function ProgressMap({ day }) {
   return (
     <div className="progress-map">
       {days.map(d => (
-        <div key={d} className={`day-marker ${d === day ? 'active' : ''}`}>
+        <div key={d} className={`day-marker ${d === day ? 'active' : ''}`} title={`Day ${d}: Stay strong!`}>
           {d === day ? '🐱' : d}
         </div>
       ))}

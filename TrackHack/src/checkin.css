@@ -14,6 +14,17 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .check-in-btn:hover {
+    background-color: #367c39; /* Darker shade of button color */
+    transform: scale(1.05);
+  }
+  
+  .cat-icon {
+    transition: left 0.5s ease, transform 0.5s;
+    /* rest of your styles */
   }
   
   .checked-in-msg {
