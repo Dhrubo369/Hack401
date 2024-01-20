@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CheckIn from './CheckIn';
 import ProgressMap from './ProgressMap';
 import MotivationalQuote from './MotivationalQuote';
+import TreeAnimation from './TreeAnimation';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [ongoingStreak, setOngoingStreak] = useState(0);
   const [co2Saved, setCo2Saved] = useState(0);
   const [healthBenefits, setHealthBenefits] = useState({ lungFunction: 0 });
+  const [treeGrowthStage, setTreeGrowthStage] = useState(0);
 
   useEffect(() => {
     const savedBestStreak = parseInt(localStorage.getItem('bestStreak'), 10) || 0;
@@ -31,6 +33,9 @@ function App() {
     newDate.setDate(newDate.getDate() + 1); 
     setCurrentDate(newDate);
     updateStreaksAndBenefits(newDate, startDate);
+  
+    // Directly set the tree growth stage here
+    setTreeGrowthStage(prevStage => prevStage + 1);
   };
 
   const handleReset = () => {
@@ -88,6 +93,8 @@ function App() {
   return (
     <div className="App">
       <h1>Detox Me</h1>
+      {/* Include the TreeAnimation component and pass the progress prop */}
+      <TreeAnimation progress={treeGrowthStage} />
       <CheckIn 
         onCheckIn={handleCheckIn} 
         currentDate={currentDate} 
@@ -101,7 +108,9 @@ function App() {
       <div className="benefits-container">
         <p>CO2 Saved: {co2Saved.toFixed(2)} kg</p>
         <p>Lung Function Improvement: {healthBenefits.lungFunction}%</p>
+      
       </div>
+    
     </div>
   );
 }
