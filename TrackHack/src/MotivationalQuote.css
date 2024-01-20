@@ -1,0 +1,9 @@
+blockquote {
+    font-style: italic;
+    color: #555555;
+    border-left: 10px solid #CCCCCC;
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  

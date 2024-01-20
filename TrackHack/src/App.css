@@ -1,42 +1,85 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  width: 100%;
+  max-width: 800px; /* Adjust width as needed */
+  margin: 20px auto; /* Center the app with top margin for spacing */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* For absolute positioning of elements inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: #4CAF50;
+  margin-bottom: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button:hover {
+  opacity: 0.9;
 }
 
-.card {
-  padding: 2em;
+.reset-button {
+  background-color: #f44336; /* Red color */
+  color: white;
 }
 
-.read-the-docs {
-  color: #888;
+.full-reset-button {
+  background-color: #ff4d4d; /* Lighter red color */
+  color: white;
 }
+
+.benefits-container {
+  order: -1; /* Move this container to the top */
+  width: 90%; /* Match the width to the progress map width for consistency */
+  margin-bottom: 20px;
+}
+.benefits-container p {
+  margin: 10px 0;
+}
+
+.tree-animation-container {
+  /* Positioning the tree on the side of the game */
+  position: absolute;
+  right: 20px;  
+  top: 20px;  
+}
+
+
+.tree-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tree {
+  font-size: 20px; /* Adjust size as needed */
+  transition: transform 0.3s ease;
+}
+
+/* Example leaf stages for growth */
+.leaf-stage-0 { transform: scaleY(0.2); }
+.leaf-stage-1 { transform: scaleY(0.4); }
+.leaf-stage-2 { transform: scaleY(0.6); }
+.leaf-stage-3 { transform: scaleY(0.8); }
+.leaf-stage-4 { transform: scaleY(1); }

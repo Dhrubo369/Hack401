@@ -1,0 +1,32 @@
+/* ProgressMap.css */
+
+.progress-map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%; /* This will take the full width of the .App container */
+}
+
+.day {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 14px;
+}
+
+.day.completed {
+  background-color: #cfc;
+}
+
+.day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
