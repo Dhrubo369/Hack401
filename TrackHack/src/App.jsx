@@ -35,7 +35,7 @@ function App() {
     updateStreaksAndBenefits(newDate, startDate);
   
     // Directly set the tree growth stage here
-    setTreeGrowthStage(prevStage => prevStage + 1);
+    setTreeGrowthStage(prevStage => prevStage + 50);
   };
 
   const handleReset = () => {
@@ -78,17 +78,27 @@ function App() {
   };
 
   const calculateBenefits = (streak) => {
-    const co2PerDay = 2.6;
-    const newCo2Saved = co2Saved + (streak * co2PerDay);
+    // CO2 calculation
+    const co2PerPack = 2.6; // CO2 emissions for smoking a pack of 20 cigarettes
+    const cigarettesPerDay = 5; // Average cigarettes smoked per day before quitting
+    const packsPerDay = cigarettesPerDay / 20; // Fraction of a pack smoked per day
+    const dailyCo2Saved = co2PerPack * packsPerDay; // Daily CO2 savings
+    const newCo2Saved = co2Saved + (streak * dailyCo2Saved);
     setCo2Saved(newCo2Saved);
     localStorage.setItem('co2Saved', newCo2Saved.toString());
-
+  
+    // Lung function improvement calculation
+    // Example: Lung function improves by 1% per day up to a maximum of 100%
+    const lungFunctionImprovementRate = 1; // 1% improvement per day
+    const newLungFunction = Math.min(streak * lungFunctionImprovementRate, 100); // Cap at 100%
     const newHealthBenefits = {
-      lungFunction: streak, // Example health metric
+      lungFunction: newLungFunction,
+      // ... include other health metrics if available
     };
     setHealthBenefits(newHealthBenefits);
     localStorage.setItem('healthBenefits', JSON.stringify(newHealthBenefits));
   };
+  
 
   return (
     <div className="App">
