@@ -6,7 +6,7 @@
   max-width: 800px; /* Adjust width as needed */
   margin: 20px auto; /* Center the app with top margin for spacing */
   padding: 20px;
-  background-color: #fff;
+  background-color: #6d35322d;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative; /* For absolute positioning of elements inside */
@@ -16,7 +16,7 @@
 }
 
 h1 {
-  color: #4CAF50;
+  color: #1AC157;
   margin-bottom: 30px;
 }
 
@@ -35,20 +35,27 @@ button:hover {
 }
 
 .reset-button {
-  background-color: #f44336; /* Red color */
+  background-color: #C22019; /* Red color */
   color: white;
 }
 
 .full-reset-button {
-  background-color: #ff4d4d; /* Lighter red color */
+  background-color: #C22019; /* Lighter red color */
   color: white;
 }
 
 .benefits-container {
-  order: -1; /* Move this container to the top */
-  width: 90%; /* Match the width to the progress map width for consistency */
-  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif; /* Choose a readable font */
+  color: #ffffff; /* A color that is easy on the eyes */
+  background-color: #6D3532; /* Light background to contrast the text */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Spacing inside the container */
+  margin-top: 20px; /* Spacing above the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center the text */
+  order: -1;
 }
+
 .benefits-container p {
   margin: 10px 0;
 }
