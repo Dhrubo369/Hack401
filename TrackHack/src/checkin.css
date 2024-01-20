@@ -16,20 +16,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  order: 1;
 }
 
 .check-in-btn {
-  background-color: #1AC157;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 10px;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 1.25rem; /* Larger font size */
+  border-radius: 8px; /* Adjust border-radius if desired */
+  background-color: #6DDB6B; /* Background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+  transition: transform 0.2s; /* Smooth transition for interactions */
+  outline: none; /* Remove the outline */
 }
+
+.check-in-btn:hover {
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
 .check-in-btn-animate {
   animation: colorSplash 1s ease;
 }
 
+.check-in-btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .streak-msg {
   font-size: 16px;
   margin: 5px 0;
