@@ -1,9 +1,37 @@
 blockquote {
-    font-style: italic;
-    color: #555555;
-    border-left: 10px solid #CCCCCC;
-    margin: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
+  font-family: 'Georgia', serif; /* A distinct font family */
+  font-size: 20px; /* Larger font size for emphasis */
+  font-style: italic;
+  color: #333; /* Darker color for better contrast */
+  background-color: #f9f9f9; /* Light background color */
+  border-left: 5px solid #4CAF50; /* Solid color border for distinction */
+  margin: 20px 0; /* Vertical margin for better spacing */
+  padding: 15px 20px; /* Padding for inner space */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
+  position: relative; /* Position relative for pseudo-elements */
+}
+
+blockquote::before {
+  content: '“'; /* Large opening quote */
+  font-size: 40px; /* Size of the quote mark */
+  color: #4CAF50; /* Color for the quote mark */
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: '”'; /* Large closing quote */
+  font-size: 40px; /* Size of the quote mark */
+  color: #4CAF50; /* Color for the quote mark */
+  position: absolute;
+  right: 10px;
+  bottom: -10px;
+}
+
+@media (max-width: 600px) {
+  blockquote {
+    font-size: 16px; /* Smaller font size for smaller screens */
+    padding: 10px 15px; /* Adjusted padding for smaller screens */
   }
-  
+}
