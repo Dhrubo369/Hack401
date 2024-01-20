@@ -1,0 +1,93 @@
+.tracker {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .roadmap {
+    position: relative;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Keeps the character within the roadmap */
+  }
+  
+  .character {
+    position: absolute;
+    bottom: 10px; /* Adjust based on your design */
+    transition: left 1s ease-in-out; /* Smooth transition for character movement */
+    animation: walk 0.5s ease-in-out infinite alternate; /* Walking animation */
+    /* Replace below with a character image if desired */
+    font-size: 2em; /* Adjust size as necessary */
+  }
+  
+  .milestone {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .milestone.reached {
+    background-color: #4caf50;
+  }
+  
+  .milestone::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    width: 2px;
+    height: 20px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+  }
+  
+  .milestone:last-child::before {
+    display: none;
+  }
+  
+  .checkin-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .checkin-button.checked-in {
+    background-color: #888;
+    cursor: default;
+  }
+  
+  .checkin-button:hover:not(.checked-in) {
+    background-color: #3e8e41;
+  }
+  
+  .checkin-button:disabled {
+    cursor: default;
+  }
+  
+  .reward {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ff9800;
+    animation: fadeIn 2s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes walk {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(50%); }
+  }
+  

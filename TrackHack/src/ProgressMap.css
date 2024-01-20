@@ -1,0 +1,25 @@
+.progress-map {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjust based on your layout preference */
+    gap: 10px;
+    padding: 20px;
+    background-color: #e4e4e4;
+    border-radius: 10px;
+  }
+  
+  .day-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .day-marker.active {
+    background-color: #4CAF50; /* Or any color of your choice */
+    color: #fff;
+    font-size: 20px;
+  }
+  
