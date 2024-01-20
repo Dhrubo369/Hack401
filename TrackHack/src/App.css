@@ -9,12 +9,14 @@ body {
 }
 
 .App {
-  max-width: 600px;
+  max-width: 800px; /* Adjust based on your design needs */
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-image: url('path/to/your/game-map-background.jpg'); /* Update with your path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 600px; /* Adjust based on your design needs */
 }
 
 h1 {
@@ -101,12 +103,11 @@ blockquote {
 /* Responsive Design */
 @media (max-width: 768px) {
   .App {
-    width: 90%;
-    margin: 10px auto;
-    padding: 15px;
+    height: 300px; /* Adjust based on your design needs */
   }
-
-  .progress-map {
-    grid-template-columns: repeat(3, 1fr);
+  
+  .progress-map .day-marker {
+    width: 30px; /* Smaller nodes for smaller screens */
+    height: 30px;
   }
 }

@@ -1,36 +1,18 @@
-// CheckIn.jsx
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './CheckIn.css';
 
-function CheckIn({ onCheckIn, currentDay, totalDays, reset }) {
-  const [streak, setStreak] = useState(0);
-
-  useEffect(() => {
-    const savedStreak = parseInt(localStorage.getItem('streak'), 10) || 0;
-    setStreak(savedStreak);
-
-    if (reset) {
-      setStreak(0);
-      localStorage.removeItem('streak');
-    }
-  }, [reset]);
-
-  const handleCheckIn = () => {
-    if (currentDay < totalDays) {
-      onCheckIn(); // Increment the day on the map
-
-      const newStreak = streak + 1;
-      setStreak(newStreak);
-      localStorage.setItem('streak', newStreak.toString());
-    }
-  };
-
+function CheckIn({ onCheckIn, currentDay, totalDays, bestStreak, ongoingStreak }) {
   return (
     <div className="check-in-container">
-      <button className="check-in-btn" onClick={handleCheckIn} disabled={currentDay >= totalDays}>
-        {currentDay < totalDays ? 'Check In' : 'Journey Completed'}
+      <button 
+        className="check-in-btn" 
+        onClick={onCheckIn} 
+        disabled={currentDay > totalDays}
+      >
+        Check In
       </button>
-      <p className="streak-msg">Your current streak: {streak} days</p>
+      <p className="streak-msg">Ongoing streak: {ongoingStreak} days</p>
+      <p className="streak-msg">Best streak: {bestStreak} days</p>
     </div>
   );
 }

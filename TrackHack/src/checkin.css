@@ -1,34 +1,29 @@
 .check-in-container {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .check-in-btn {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-  }
+  text-align: center;
+  margin: 20px 0;
+}
 
-  .check-in-btn:hover {
-    background-color: #367c39; /* Darker shade of button color */
-    transform: scale(1.05);
-  }
-  
-  .cat-icon {
-    transition: left 0.5s ease, transform 0.5s;
-    /* rest of your styles */
-  }
-  
-  .checked-in-msg {
-    color: green;
-    font-size: 20px;
-  }
-  
+.check-in-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.check-in-btn:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.journey-completed-msg {
+  color: #008000;
+  font-size: 18px;
+}
+
+.streak-msg {
+  margin-top: 10px;
+  font-size: 16px;
+}
